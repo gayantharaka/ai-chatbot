@@ -5,7 +5,8 @@ import { AboutComponent } from './core/about/about.component';
 const routes: Routes = [
   {path:'',redirectTo:'/chat',pathMatch:'full'},
   {path:'about',component:AboutComponent},
- // {path:'chat',loadChildren:()=>import('./chat/chat.module').then(m=>m.ChatModule))}
+  { path: 'chat', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
+  {path:'chat',loadChildren:()=>import('./chat/chat.module').then(m=>m.ChatModule)}
 ];
 
 @NgModule({
