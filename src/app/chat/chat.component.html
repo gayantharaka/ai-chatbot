@@ -3,4 +3,18 @@
         <h1>Meet AICHATBOT</h1>
         <p>Your personal AI assitant</p>
     </div>
+
+    <div class="chat-input-section">
+       <mat-form-field appearance="fill" class="chat-input-field">
+        <textarea matInput placeholder="Type your message here" rows="1" [(ngModel)]="userMessage" (keydown.enter)="sendMessage()"></textarea>
+       </mat-form-field> 
+       <button mat-icon-button color="primary" (click)="sendMessage()" aria-label="Send">
+        <mat-icon>send</mat-icon>
+       </button>
+    </div>
+
+    <div class="footer-links">By continuing, you agree to our
+        <a href="/terms"> Terms </a> and <a href="/privacy">Privacy Policy</a>.
+    </div>
+
 </div>

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './chat.component.css'
 })
 export class ChatComponent {
+  userMessage:string ='';
+
+  sendMessage(){
+    if(!this.userMessage.trim()) return;
+    console.log('User says:', this.userMessage);
+    this.userMessage = '';
+  }
 
 }
