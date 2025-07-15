@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChatMessage } from './chat-message.model';
 
 @Component({
   selector: 'app-chat',
@@ -7,11 +8,31 @@ import { Component } from '@angular/core';
 })
 export class ChatComponent {
   userMessage:string ='';
+  messages:ChatMessage[]=[];
 
   sendMessage(){
-    if(!this.userMessage.trim()) return;
-    console.log('User says:', this.userMessage);
+    const content = this.userMessage.trim();
+    if(!content) return;
+   
+    const userMsg:ChatMessage = {
+      role:'user',
+      content,
+      timestamp:Date.now()
+    };
+
+    this.messages.push(userMsg);
     this.userMessage = '';
+
+    const aiMsg:ChatMessage ={
+      role:'assistant',
+      content:`Echo ${content}`,
+      timestamp:Date.now()+1
+    };
+
+    setTimeout(() =>{
+      this.messages.push(aiMsg);
+    },500);
+
   }
 
 }
