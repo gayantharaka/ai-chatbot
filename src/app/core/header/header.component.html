@@ -1,6 +1,18 @@
-<mat-toolbar >
-    <span class="app-title">AICHATBOT</span>
-    <span class="spacer"></span>
-    <a mat-button routerLink="/about">About</a>
-    <button mat-button color ="accent">Sign In</button>
+<mat-toolbar color="primary" class="toolbar">
+  <span class="app-title">AICHATBOT</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/about">About</a>
+
+   <ng-container *ngIf="user; else guest">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <img [src]="user.user_metadata?.['avatar_url']" class="profile-img" alt="profile" />
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="signOut()">Logout</button>
+    </mat-menu>
+  </ng-container>
+
+  <ng-template #guest>
+    <button mat-button color="accent" (click)="signIn()">Sign In</button>
+  </ng-template>
 </mat-toolbar>
