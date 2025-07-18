@@ -19,6 +19,12 @@ export class ChatComponent implements OnInit {
     this.chatService.getMessages().subscribe(({data})=>{
       this.messages = data;
     });
+
+    supabase.auth.onAuthStateChange((event,session)=>{
+      if(!session){
+        this.messages =[];
+      }
+    });
   }
 
   async sendMessage(){
