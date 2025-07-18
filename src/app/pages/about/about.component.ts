@@ -255,7 +255,7 @@ Deno.serve(async (req)=>{
 create secret keys for PROJECT_URL(supabase project url), PROJECT_ANON_KEY (supabase anon key),
 PROJECT_SERVICE_ROLE_KEY (supabase service role secret key),OPENAI_API_KEY (openai api key)
 
-and in this Angular project
+and in this Angular project first you need to install @supabase/supabase-js and @angular/material and then 
 create environment files and add those keys with values.
 supabaseUrl (supabase project url)
 supabaseKey (supabase anon key)
