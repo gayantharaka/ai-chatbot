@@ -82,12 +82,14 @@
     background-color: #e0f7fa;
     align-self: flex-end;
     border-top-right-radius: 0;
+    text-align:left;
 }
 
 .message.assitant{
     background-color: #e8eaf6;
     align-self: flex-start;
     border-bottom-left-radius: 0;
+    text-align:left;
 }
 
 .footer-links{
