@@ -1,4 +1,4 @@
-## 🧠 AI Chatbot with Supabase & Angular
+## AI Chatbot with Supabase & Angular
 
 This is a full-stack AI-powered chatbot web application built using **Angular** (frontend), **Supabase** (authentication, database, edge functions), and **OpenAI** (for generating responses).
 
